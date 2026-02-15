@@ -2,7 +2,20 @@
 
 ## プロジェクト概要
 
-Data・AI関連のニュースを自動収集し、AIで要約して投稿するアプリケーション。
+Data・AI関連のニュースを自動収集し、Claude APIで要約してNoteに自動投稿するアプリケーション。
+
+## 技術スタック
+
+| カテゴリ | 技術 |
+|---------|------|
+| 言語 | Python 3.12+ |
+| ニュース収集 | RSS / API (feedparser) |
+| AI要約 | Claude API (anthropic) |
+| Note投稿 | Playwright（ブラウザ自動操作） |
+| データベース | SQLite |
+| スケジューリング | GitHub Actions (cron) |
+| テスト | pytest |
+| リンター / フォーマッター | ruff |
 
 ## 開発ワークフロー
 
@@ -53,27 +66,41 @@ Data・AI関連のニュースを自動収集し、AIで要約して投稿する
 - 変更が既存のテストを壊していないか確認する
 - セキュリティ上のリスク（ハードコードされた秘密情報、インジェクションなど）がないか確認する
 
-## ディレクトリ構成（予定）
+## ディレクトリ構成
 
 ```
 project-data-ai-new/
 ├── CLAUDE.md
 ├── README.md
-├── src/           # アプリケーションコード
-├── tests/         # テストコード
-├── config/        # 設定ファイル
-└── docs/          # ドキュメント
+├── pyproject.toml
+├── src/
+│   ├── collector/     # ニュース収集
+│   ├── summarizer/    # AI要約
+│   ├── publisher/     # Note投稿
+│   ├── db/            # データベース操作
+│   └── main.py
+├── tests/
+│   ├── test_collector/
+│   ├── test_summarizer/
+│   ├── test_publisher/
+│   └── test_db/
+├── .github/
+│   └── workflows/     # GitHub Actions
+└── config/            # 設定ファイル
 ```
 
-## 共通コマンド（技術スタック決定後に更新）
+## 共通コマンド
 
 ```bash
 # テスト実行
-# TBD
+pytest
+
+# テスト実行（カバレッジ付き）
+pytest --cov=src
 
 # リンター実行
-# TBD
+ruff check src/ tests/
 
 # フォーマッター実行
-# TBD
+ruff format src/ tests/
 ```
