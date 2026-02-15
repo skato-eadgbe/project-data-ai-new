@@ -84,3 +84,14 @@ class TestArticleRepository:
         unsummarized = repo.get_unsummarized()
         assert len(unsummarized) == 1
         assert unsummarized[0]["url"] == "https://a.com/2"
+
+    def test_記事の要約を更新できる(self, repo):
+        article = Article("A1", "https://a.com/1", "元の要約", "Src1", "2026-01-01")
+        repo.save(article)
+        repo.update_summary("https://a.com/1", "AIによる新しい要約")
+        articles = repo.get_all()
+        assert articles[0]["summary"] == "AIによる新しい要約"
+
+    def test_存在しないURLの要約更新は何も起きない(self, repo):
+        repo.update_summary("https://nonexistent.com", "要約テキスト")
+        assert len(repo.get_all()) == 0
