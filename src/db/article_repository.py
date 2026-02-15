@@ -70,6 +70,10 @@ class ArticleRepository:
             )
             return [dict(row) for row in cursor.fetchall()]
 
+    def update_summary(self, url: str, summary: str) -> None:
+        with sqlite3.connect(self.db_path) as conn:
+            conn.execute("UPDATE articles SET summary = ? WHERE url = ?", (summary, url))
+
     def mark_as_summarized(self, url: str) -> None:
         with sqlite3.connect(self.db_path) as conn:
             conn.execute("UPDATE articles SET is_summarized = 1 WHERE url = ?", (url,))
