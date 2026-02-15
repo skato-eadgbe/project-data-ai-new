@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+src/__init__.py
+src/collector/__init__.py
+src/db/__init__.py
+src/project_data_ai_new.egg-info/PKG-INFO
+src/project_data_ai_new.egg-info/SOURCES.txt
+src/project_data_ai_new.egg-info/dependency_links.txt
+src/project_data_ai_new.egg-info/requires.txt
+src/project_data_ai_new.egg-info/top_level.txt
+src/publisher/__init__.py
+src/summarizer/__init__.py

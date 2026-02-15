@@ -1,0 +1,54 @@
+{
+  "rss_feeds": [
+    {
+      "name": "AWS Machine Learning Blog",
+      "url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "category": "cloud"
+    },
+    {
+      "name": "AWS Big Data Blog",
+      "url": "https://aws.amazon.com/blogs/big-data/feed/",
+      "category": "cloud"
+    },
+    {
+      "name": "Azure AI Blog",
+      "url": "https://techcommunity.microsoft.com/category/ai/blog/machinelearningblog/rss",
+      "category": "cloud"
+    },
+    {
+      "name": "Google Cloud Blog",
+      "url": "https://cloudblog.withgoogle.com/rss/",
+      "category": "cloud"
+    },
+    {
+      "name": "Databricks Blog",
+      "url": "https://www.databricks.com/feed",
+      "category": "data_ai_saas"
+    },
+    {
+      "name": "Snowflake Blog",
+      "url": "https://www.snowflake.com/feed/",
+      "category": "data_ai_saas"
+    },
+    {
+      "name": "Anthropic",
+      "url": "https://www.anthropic.com/rss.xml",
+      "category": "ai"
+    },
+    {
+      "name": "OpenAI Blog",
+      "url": "https://openai.com/blog/rss.xml",
+      "category": "ai"
+    },
+    {
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "category": "tech_media"
+    }
+  ],
+  "hacker_news": {
+    "base_url": "https://hacker-news.firebaseio.com/v0/",
+    "max_stories": 30,
+    "keywords": ["AI", "LLM", "machine learning", "data engineering", "GPT", "Claude", "deep learning"]
+  }
+}
